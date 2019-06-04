@@ -18,7 +18,7 @@ Algoritmo de Visualização da situação da asma do pais (Sala de Situação) e
 
 7) Com isso, foi feita uma limpeza das variaveis utlilizadas anteriormente para criacao das novas como: VAL_TOT (que se transformou em custo), DT_INT (ano, mes e dia)
 
-8)As variaves levadas em consideracao para analise foram: Estado, Estacao, Ano, Sexo, Idade e para predizer o CUSTO que ela tera na internacao.
+8) As variaves levadas em consideracao para analise foram: Estado, Estacao, Ano, Sexo, Idade e para predizer o CUSTO que ela tera na internacao.
 
 9) Os algoritmos treinados foram: Neural Network Classifier, Random Forest Classifies e Decision Tree Classifier, sendo feito preocedimento de One Hot Encoding (para transformar a base em categorias 0 e 1) com o alvo sendo o CUSTO ALTO.
 

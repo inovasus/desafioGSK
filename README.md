@@ -25,16 +25,16 @@ Algoritmo de Visualização da situação da asma do pais (Sala de Situação) e
 10) Os resultados foram apontados de duas maneiras: 
 
 10.1) uma dividindo o banco em 70% para treino e 30% para teste (metodo muito comum entre cientistas de dados) com Acuracia resultante:
-Accuracy1 Neural Networt: 93.73%
+Accuracy1 Neural Networt: 100%
 Accuracy1 Decision Tree: 100%
 Accuracy1 Random Forest: 95.19%
 Accuracy1 XGboost: 100.00%
 
 10.2) na segunda fazendo uma validação cruzada para balancear melhor os dados de treino em teste dividindo-os em 10 partes e os resultados obtidos para elas foram: 
-Accuracy2 Neural Network: 54.21%
-Accuracy2 Decision Tree: 45.52%
-Accuracy2 Random Forest: 36.12%
-Accuracy2 XGboost: ??
+Accuracy Rede Neural: 85.04%
+Accuracy Decision Tree: 100.00%
+Accuracy Random Forest: 93.58%
+Accuracy XGboost: 100.00%
 
-
-11) No fim, foi usado um metodo de ESEMBLE no qual foi feita a UNIAO dos modelos de Machine Learning -  Neural Network, Decision Tree, Random Forest e Gradient Boosting -- para classificarem por VOTO as variavels e predizerem o CUSTO de acordo com os mesmos inputs, levando em consideracao as partes do banco de dados que cada um conseguiu predizer melhor e voltando a predicao de um ALTO CUSTO ou BAIXO CUSTO.
+11) No fim, como houveram variacoes na acuracia de diferentes algoritmos e alguns acertaram muito, foi usado um metodo de ESEMBLE no qual foi feita a UNIAO dos modelos de Machine Learning -  Neural Network, Decision Tree, Random Forest e Gradient Boosting -- para classificarem por VOTO as variavels e predizerem o CUSTO de acordo com os mesmos inputs, levando em consideracao as partes do banco de dados que cada um conseguiu predizer melhor e voltando a predicao de um ALTO CUSTO ou BAIXO CUSTO.
+ESEMBLE Accuracy: 99.03%

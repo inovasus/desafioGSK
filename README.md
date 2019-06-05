@@ -1,4 +1,4 @@
-[Visualização do site](https://inovasus.github.io/desafioGSK/index.html)
+Após clonar o repositório abre o arquivo index.html
 
 # DesafioGSK
 

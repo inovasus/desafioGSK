@@ -1,4 +1,4 @@
-[Visualização do site](www.google.com.br)
+[Visualização do site](https://inovasus.github.io/desafioGSK/index.html)
 
 # DesafioGSK
 
@@ -60,5 +60,7 @@ ESEMBLE Accuracy: 99.03%
 ## Equipe
 
 [André Santos](https://www.linkedin.com/in/andremarquessantos)
+
 [Fabiano Filho](https://www.linkedin.com/in/fabiano-filho-731563128/)
+
 Marlon Candoti

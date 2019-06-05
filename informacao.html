@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    InovaSUS - Desafio Asma GSK
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="https://dataviva-site-production.s3.amazonaws.com/blog/39/images/content/ff1c1e68718eb063afc702fdcc7a2686bf13cd53">
+          </div>
+        </a>
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          InovaSUS
+          <!-- <div class="logo-image-big">
+            <img src="assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="./index.html">
+              <i class="nc-icon nc-bank"></i>
+              <p>Painel do Gestor</p>
+            </a>
+          </li>
+          <li>
+            <a href="./modelo.html">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>Modelo - Análise</p>
+            </a>
+          </li>
+          <li>
+            <a href="./video.html">
+              <i class="nc-icon nc-button-play"></i>
+              <p>Vídeo</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="./informacao.html">
+              <i class="nc-icon nc-alert-circle-i"></i>
+              <p>Informação</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">PASSO A PASSO</a>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+  
+  <canvas id="bigDashboardChart"></canvas>
+  
+  
+</div> -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">PROCESSO PARA ANÁLISE</h5>
+                <p>Abaixo mostramos quais foram os passos realizados para obter tanto as bases e modelos desenvolvidos para esse desafio</p>
+              </div>
+              <div class="card-body">
+                <h5><b>Desafio GSK</b></h5>
+                <p>Algoritmo de Visualização da situação da asma do país (Sala de Situação) e Predição de Custo Hospitalar em asmáticos em crise internados nos últimos 5 anos em todo Brasil.</p>
+                <h6>Etapas do Desenvolvimento - Sala de situação</h6>
+                <p>0) Com o TABWIN filtramos todos os registros que estavam relacionados com o CID J45, tanto na base ambulatorial, quanto na base hospitalar</p>
+                <p>1) Selecionamos os campos de interesse e criamos uma nova base através da união de campos comuns do SIHSUS e SIASUS</p>
+                <p>2) Através da plataforma TABLEAU criamos a sala de situação para o gstor municipal</p>
+                <p><small>Observação: Como utilizamos o tableau public não é possível salvar o arquivo com a extensão tbwx, apenas conseguimos salvar no cloud do tableau.</small></p>
+
+                <h6>Etapas do Desenvolvimento - Modelo</h6>
+                <p>0) Com o TABWIN foi filtrado todos os casos de asma que existiam no banco de dados SIH dos ultimos 5 anos</p>
+                <p>1) Foram importadas para analise em Python as bases de dados hospitalares de 2014-2018 / internacoes hospitalares pela asma</p>
+                <p>2) Classificamos o estado de acordo com seus respectivos municipios</p>
+                <p>3) Foi realizado o perfil dos dados e no pre-processamento retiradas as colunas com variaveis excluidas, variaveis faltantes acima de 80% dos dados e das colunas que tinham colinearidade entre si (representavam a mesma variavel) apenas uma delas ficou para a analise.</p>
+                <p>4) Em uma segunda analise, usando o pre-processamento anterior, foram criadas novas variaveis fazer parte analise da internacao por crises de asma: Estação, Ano, Mes, Dia.</p>
+                <p>5) Alem disso, foram ajustadas as variaveis SEXO para SEXO_2 e a variavel IDADE levando em consideracao informacoes da variavel COD_IDADE.</p>
+                <p>6) Todas as variaveis foram transformadas em categoricas para a Predicao usando metodos de Machine Leaning e a variavel a ser predita foi VAL_TOT (valor total de gastos na internacao), tranformando-a em “custo”, que cortava em 500 o custo alto (maior que 500) e custo baixo (menor que 500)</p>
+                <p>7) Com isso, foi feita uma limpeza das variaveis utlilizadas anteriormente para criacao das novas como: VAL_TOT (que se transformou em custo), DT_INT (ano, mes e dia)</p>
+                <p>8) As variaves levadas em consideracao para analise foram: Estado, Estacao, Ano, Sexo, Idade e para predizer o CUSTO que ela tera na internacao.</p>
+                <p>9) Os algoritmos treinados foram: Neural Network Classifier, Random Forest Classifies e Decision Tree Classifier, sendo feito preocedimento de One Hot Encoding (para transformar a base em categorias 0 e 1) com o alvo sendo o CUSTO ALTO.</p>
+                <p>10) Os resultados foram apontados de duas maneiras: </p>
+                <p>10.1) uma dividindo o banco em 70% para treino e 30% para teste (metodo muito comum entre cientistas de dados) com Acuracia resultante:<br>
+Accuracy1 Neural Networt: 100%<br>
+Accuracy1 Decision Tree: 100%<br>
+Accuracy1 Random Forest: 95.19%<br>
+Accuracy1 XGboost: 100.00%</p>
+                <p>10.2) na segunda fazendo uma validação cruzada para balancear melhor os dados de treino em teste dividindo-os em 10 partes e os resultados obtidos para elas foram:<br>
+Accuracy Rede Neural: 85.04%<br>
+Accuracy Decision Tree: 100.00%<br>
+Accuracy Random Forest: 93.58%<br>
+Accuracy XGboost: 100.00%</p>
+                <p>11) No fim, como houveram variacoes na acuracia de diferentes algoritmos e alguns acertaram muito, foi usado um metodo de ESEMBLE no qual foi feita a UNIAO dos modelos de Machine Learning -  Neural Network, Decision Tree, Random Forest e Gradient Boosting -- para classificarem por VOTO as variavels e predizerem o CUSTO de acordo com os mesmos inputs, levando em consideracao as partes do banco de dados que cada um conseguiu predizer melhor e voltando a predicao de um ALTO CUSTO ou BAIXO CUSTO.<br>
+ESEMBLE Accuracy: 99.03%</p>
+                <h6>Arquivos</h6>
+                <p><a href="https://drive.google.com/open?id=1_hIiEz2msIbBfNgi4bqXaMaL8IXfFyVM">https://drive.google.com/open?id=1_hIiEz2msIbBfNgi4bqXaMaL8IXfFyVM</a></p>
+                <h6>Equipe</h6>
+                <p>ANDRÉ SANTOS - <a href="https://www.linkedin.com/in/andremarquessantos">Linkedin</a></p>
+                <p>FABIANO FILHO - <a href="https://www.linkedin.com/in/fabiano-filho-731563128/">Linkedin</a></p>
+                <p>MARLON CANDOTI - <a href="">Linkedin</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="credits ml-auto">
+              <span class="copyright">
+                ©
+                <script>
+                  document.write(new Date().getFullYear())
+                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+
+    window.onload = function() {
+      var iconsWrapper = document.getElementById('icons-wrapper'),
+        listItems = iconsWrapper.getElementsByTagName('li');
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].onclick = function fun(event) {
+          var selectedTagName = event.target.tagName.toLowerCase();
+          if (selectedTagName == 'p' || selectedTagName == 'em') {
+            SelectText(event.target);
+          } else if (selectedTagName == 'input') {
+            event.target.setSelectionRange(0, event.target.value.length);
+          }
+        }
+
+        var beforeContentChar = window.getComputedStyle(listItems[i].getElementsByTagName('i')[0], '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, ""),
+          beforeContent = beforeContentChar.charCodeAt(0).toString(16);
+        var beforeContentElement = document.createElement("em");
+        beforeContentElement.textContent = "\\" + beforeContent;
+        listItems[i].appendChild(beforeContentElement);
+
+        //create input element to copy/paste chart
+        var charCharac = document.createElement('input');
+        charCharac.setAttribute('type', 'text');
+        charCharac.setAttribute('maxlength', '1');
+        charCharac.setAttribute('readonly', 'true');
+        charCharac.setAttribute('value', beforeContentChar);
+        listItems[i].appendChild(charCharac);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,7 +1,21 @@
-# DesafioGSK
+[Visualização do site](www.google.com.br)
+
+#DesafioGSK
+
 Algoritmo de Visualização da situação da asma do pais (Sala de Situação) e Predição de Custo Hospitalar em asmáticos em crise internados nos últimos 5 anos em todo Brasil.
 
-# Etapas do Desenvolvimento
+##Etapas do Desenvolvimento - Sala de Situação
+
+0) Com o TABWIN filtramos todos os registros que estavam relacionados com o CID J45, tanto na base ambulatorial, quanto na base hospitalar
+
+1) Selecionamos os campos de interesse e criamos uma nova base através da união de campos comuns do SIHSUS e SIASUS
+
+2) Através da plataforma TABLEAU criamos a sala de situação para o gstor municipal
+
+_Observação: Como utilizamos o tableau public não é possível salvar o arquivo com a extensão tbwx, apenas conseguimos salvar no cloud do tableau._
+
+##Etapas do Desenvolvimento - Modelo
+
 0) Com o TABWIN foi filtrado todos os casos de asma que exitiam no banco de dados SIH dos ultimos 5 anos 
 
 1) Foram importadas para analise em Python as bases de dados hospitalares de 2014-2018 / internacoes hospitalares pela asma 
@@ -38,3 +52,13 @@ Accuracy XGboost: 100.00%
 
 11) No fim, como houveram variacoes na acuracia de diferentes algoritmos e alguns acertaram muito, foi usado um metodo de ESEMBLE no qual foi feita a UNIAO dos modelos de Machine Learning -  Neural Network, Decision Tree, Random Forest e Gradient Boosting -- para classificarem por VOTO as variavels e predizerem o CUSTO de acordo com os mesmos inputs, levando em consideracao as partes do banco de dados que cada um conseguiu predizer melhor e voltando a predicao de um ALTO CUSTO ou BAIXO CUSTO.
 ESEMBLE Accuracy: 99.03%
+
+##Arquivos
+
+[Google Drive](https://drive.google.com/open?id=1_hIiEz2msIbBfNgi4bqXaMaL8IXfFyVM)
+
+##Equipe
+
+[André Santos](https://www.linkedin.com/in/andremarquessantos)
+[Fabiano Filho](https://www.linkedin.com/in/fabiano-filho-731563128/)
+Marlon Candoti

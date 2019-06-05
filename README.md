@@ -1,4 +1,4 @@
-Após clonar o repositório abre o arquivo index.html
+Após clonar o repositório abra o arquivo index.html
 
 # DesafioGSK
 

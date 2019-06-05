@@ -63,4 +63,4 @@ ESEMBLE Accuracy: 99.03%
 
 [Fabiano Filho](https://www.linkedin.com/in/fabiano-filho-731563128/)
 
-Marlon Candoti
+[Marlon Candoti](https://www.linkedin.com/in/marlon-w-3b16809b/)
